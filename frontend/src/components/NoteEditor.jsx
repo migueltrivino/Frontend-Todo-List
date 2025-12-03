@@ -1,14 +1,17 @@
 import { useState } from "react";
 import api from "../services/api";
-import MDEditor from "@uiw/react-md-editor";
-import "../css/NoteEditor.css"
+import "../css/NoteEditor.css";
 
 export default function NoteEditor({ fetchNotes }) {
+  const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const createNote = async () => {
+  const createNote = async (e) => {
+    e.preventDefault();
+
     try {
-      await api.post("/notes/", { content });
+      await api.post("/notes/", { title, content });
+      setTitle("");
       setContent("");
       fetchNotes();
     } catch (err) {
@@ -18,17 +21,25 @@ export default function NoteEditor({ fetchNotes }) {
   };
 
   return (
-    <div className="note-editor">
-      <h3>New Note</h3>
+    <form className="note-editor" onSubmit={createNote}>
+      <h3>Create Note</h3>
 
-      <MDEditor value={content} onChange={setContent} />
+      <input
+        type="text"
+        placeholder="Title..."
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
 
-      <div className="preview">
-        <h4>Preview:</h4>
-        <MDEditor.Markdown source={content} />
-      </div>
+      <textarea
+        placeholder="Write your note..."
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        required
+      />
 
-      <button onClick={createNote}>Add Note</button>
-    </div>
+      <button type="submit">Add Note</button>
+    </form>
   );
 }

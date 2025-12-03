@@ -1,99 +1,110 @@
+/* NoteItem.css */
+
+/* --- Estilo general para cada nota --- */
 .note-item {
-  background: #fff;
+  /* Contenedor principal */
+  background-color: #f7f7f7; /* Fondo ligeramente gris */
   border: 1px solid #ddd;
-  padding: 1.2rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s;
+  border-radius: 8px; /* Esquinas redondeadas */
+  padding: 16px;
+  margin-bottom: 15px; /* Espacio entre notas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .note-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Efecto al pasar el ratón */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* --- Título y Contenido (Modo Lectura) --- */
 .note-item h3 {
+  /* Estilo del título */
+  color: #333;
   margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
-  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
 }
 
-.note-item textarea {
+.note-item p {
+  /* Estilo del contenido */
+  color: #666;
+  white-space: pre-wrap; /* Respeta los saltos de línea y espacios */
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* --- Formulario de Edición (Modo Edición) --- */
+.note-edit-form input[type="text"] {
+  /* Estilo para el input de título */
   width: 100%;
-  min-height: 100px;
-  padding: 0.7rem;
-  margin-bottom: 0.8rem;
-  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  font-family: monospace;
-  resize: vertical;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  border-radius: 4px;
+  font-size: 1.1em;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
-.note-item textarea:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
-  outline: none;
+.note-edit-form textarea {
+  /* Estilo para el textarea de contenido */
+  width: 100%;
+  height: 100px; /* Altura inicial */
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+  box-sizing: border-box;
 }
 
-/* Botones encapsulados */
+/* --- Botones --- */
 .note-item-buttons {
-  margin-top: 0.6rem;
+  /* Contenedor de botones */
   display: flex;
-  justify-content: flex-end;
+  gap: 10px; /* Espacio entre botones */
+  justify-content: flex-end; /* Alinea los botones a la derecha */
 }
 
 .note-item-buttons button {
-  margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
+  /* Estilo general para los botones */
+  padding: 8px 15px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s, transform 0.1s;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
-/* Botón principal verde */
-.note-item-buttons button:first-of-type {
-  background: #27ae60; 
+/* Botón de Edición/Guardar */
+.note-item-buttons button:first-child {
+  background-color: #007bff; /* Azul */
   color: white;
 }
 
-.note-item-buttons button:first-of-type:hover {
-  background: #1e8449;
+.note-item-buttons button:first-child:hover {
+  background-color: #0056b3;
 }
 
-/* Botón secundario rojo */
-.note-item-buttons button:last-of-type {
-  background: #e74c3c;
+/* Botón de Cancelar/Eliminar */
+.note-item-buttons button:last-child {
+  background-color: #dc3545; /* Rojo */
   color: white;
 }
 
-.note-item-buttons button:last-of-type:hover {
-  background: #c0392b;
+.note-item-buttons button:last-child:hover {
+  background-color: #c82333;
 }
 
-.note-item-buttons button:active {
-  transform: scale(0.97);
+/* Estilo específico para el botón de Cancelar/Eliminar en modo edición */
+.note-edit-form .note-item-buttons button:last-child {
+    background-color: #6c757d; /* Gris para cancelar */
 }
 
-/* Vista previa */
-.note-item .preview {
-  background: #f9f9f9;
-  padding: 0.7rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 0.5rem; 
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.note-item .preview h3 {
-  margin-top: 0;
-  margin-bottom: 0.3rem;
-  font-size: 1rem;
-  color: #34495e;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.2rem;
+.note-edit-form .note-item-buttons button:last-child:hover {
+    background-color: #5a6268;
 }
