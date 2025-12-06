@@ -14,7 +14,7 @@ export default function Header() {
     <header className="header">
       <h1>NotasApp</h1>
       <nav>
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout}>Cerrar sesión</button>
       </nav>
     </header>
   );

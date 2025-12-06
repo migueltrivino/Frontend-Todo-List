@@ -1,39 +1,52 @@
+/* ----------------- HEADER MODERNO (variables) ----------------- */
+
 .header {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  padding: 1rem 2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  /* usaremos bg-2 como base para sombras y contraste en el borde */
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;          
-  position: fixed;       
+  width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;         
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
   box-sizing: border-box;
 }
 
+/* título */
 .header h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent); /* accent como color principal */
+  letter-spacing: -0.5px;
   margin: 0;
 }
 
+/* botones de nav */
 .header nav button {
-  background: #3498db;
-  color: white;
+  background: linear-gradient(180deg, var(--accent), var(--accent-600));
+  color: #ffffff;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.55rem 1.4rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.25s ease, transform 0.12s;
+  box-shadow: 0 6px 18px rgba(109,40,217,0.12);
 }
 
 .header nav button:hover {
-  background: #2980b9;
+  background: linear-gradient(180deg, var(--accent-600), var(--accent));
+  transform: translateY(-1px);
 }
 
-/* Ajuste para que el contenido no quede debajo del header */
-body {
-  margin: 0;
-  padding-top: 70px; /* da espacio al contenido según la altura del header */
+.header nav button:active {
+  transform: translateY(1px);
+  opacity: 0.95;
 }

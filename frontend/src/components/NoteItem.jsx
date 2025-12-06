@@ -44,8 +44,8 @@ export default function NoteItem({ note, fetchNotes }) {
           />
 
           <div className="note-item-buttons">
-            <button onClick={updateNote}>Save</button>
-            <button onClick={() => setIsEditing(false)}>Cancel</button>
+            <button onClick={updateNote}>Guardar</button>
+            <button onClick={() => setIsEditing(false)}>Cancelar</button>
           </div>
         </div>
       ) : (
@@ -54,8 +54,8 @@ export default function NoteItem({ note, fetchNotes }) {
           <p>{note.content}</p>
 
           <div className="note-item-buttons">
-            <button onClick={() => setIsEditing(true)}>Edit</button>
-            <button onClick={deleteNote}>Delete</button>
+            <button onClick={() => setIsEditing(true)}>Editar</button>
+            <button onClick={deleteNote}>Borrar</button>
           </div>
         </>
       )}

@@ -1,84 +1,80 @@
+/* ----------------- FORMULARIO CREADOR DE NOTAS (variables) ----------------- */
+
 .note-editor {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  padding: 1.2rem;
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s;
-  max-width: 700px;
-  width: 100%;
+  background: var(--card-bg); /* tarjeta clara definida por --card-bg */
+  border: 1px solid rgba(15,23,36,0.06);
+  border-radius: 18px;
+  padding: 2rem;
+  margin-top: 6rem;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.12);
+  transition: 0.3s ease;
+  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 
 .note-editor:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(2,6,23,0.14);
 }
 
 .note-editor h3 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  color: #2c3e50;
   text-align: center;
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  margin-bottom: 1.8rem;
+  font-weight: 700;
 }
 
 /* Inputs */
 .note-editor input,
 .note-editor textarea {
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,36,0.08);
+  background: #fff; /* sobre la card, input blanco para máxima legibilidad */
+  margin-bottom: 1.4rem;
   font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  color: var(--text-primary);
+  transition: 0.25s ease;
+  box-sizing: border-box;
 }
 
-.note-editor textarea {
-  min-height: 130px;
-  resize: vertical;
+.note-editor input::placeholder,
+.note-editor textarea::placeholder {
+  color: #9aa6b3;
 }
 
 .note-editor input:focus,
 .note-editor textarea:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px var(--focus-ring);
+  background: #ffffff;
   outline: none;
 }
 
 /* Botón */
 .note-editor button {
   width: 100%;
-  background: #27ae60;
+  background: linear-gradient(180deg, var(--accent), var(--accent-600));
   color: white;
+  padding: 1rem;
+  border-radius: 14px;
   border: none;
-  padding: 0.7rem;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s, transform 0.1s;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: 0.25s ease, transform 0.12s;
+  box-shadow: 0 8px 20px rgba(109,40,217,0.12);
 }
 
 .note-editor button:hover {
-  background: #1e8449;
+  background: linear-gradient(180deg, var(--accent-600), var(--accent));
+  transform: translateY(-1px);
 }
 
 .note-editor button:active {
-  transform: scale(0.97);
-}
-
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  .note-editor {
-    padding: 1rem;
-  }
-
-  .note-editor h3 {
-    font-size: 1.1rem;
-  }
-
-  .note-editor button {
-    font-size: 0.95rem;
-  }
+  transform: translateY(1px);
+  opacity: 0.98;
 }

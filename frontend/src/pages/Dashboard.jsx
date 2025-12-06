@@ -28,7 +28,6 @@ export default function Dashboard() {
   return (
     <div>
       <Header/>
-      <h1>Dashboard</h1>
       <NoteEditor fetchNotes={fetchNotes} />
       <NoteList notes={notes} fetchNotes={fetchNotes} />
     </div>

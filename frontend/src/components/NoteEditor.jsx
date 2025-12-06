@@ -22,24 +22,24 @@ export default function NoteEditor({ fetchNotes }) {
 
   return (
     <form className="note-editor" onSubmit={createNote}>
-      <h3>Create Note</h3>
+      <h3>Crear Nota</h3>
 
       <input
         type="text"
-        placeholder="Title..."
+        placeholder="Título..."
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
       />
 
       <textarea
-        placeholder="Write your note..."
+        placeholder="Escribe tu nota..."
         value={content}
         onChange={(e) => setContent(e.target.value)}
         required
       />
 
-      <button type="submit">Add Note</button>
+      <button type="submit">Agregar nota</button>
     </form>
   );
 }
