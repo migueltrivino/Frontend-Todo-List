@@ -30,7 +30,7 @@ Ejecuta:
 npm install
 ```
 
-## ▶ 3. Ejecutar el servidor de desarrollo
+## 3. Ejecutar el servidor de desarrollo
 
 ```bash
 npm run dev
@@ -42,7 +42,7 @@ Accede a la URL que aparece en consola, normalmente:
 http://localhost:5173/
 ```
 
-## ⚙ 4. Variables de entorno (opcional)
+## 4. Variables de entorno (opcional)
 
 Crea un archivo `.env` en la raíz:
 
